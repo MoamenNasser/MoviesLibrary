@@ -1,0 +1,25 @@
+<section class="home">
+  <h1 class="visually-hidden">Movie List</h1>
+  <form class="search-form" role="search" [formGroup]="form" (ngSubmit)="onSearch()">
+    <label class="visually-hidden" for="search-input">Search movies</label>
+    <input
+      id="search-input"
+      class="search-input"
+      type="text"
+      placeholder="Search movies..."
+      formControlName="query"
+    />
+    <button type="submit" class="search-button">Search</button>
+  </form>
+
+  @let current = state();
+  @if (current.status === 'loading') {
+    <div class="status loading" role="status">Loading...</div>
+  } @else if (current.status === 'error') {
+    <div class="status error-message" role="alert">{{ current.message }}</div>
+  } @else if (current.movies.length === 0) {
+    <div class="status" role="status">No movies found.</div>
+  } @else {
+    <app-movie-grid [movies]="current.movies" />
+  }
+</section>

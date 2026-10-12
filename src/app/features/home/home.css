@@ -1,0 +1,64 @@
+.home {
+  padding: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.search-input {
+  flex: 1;
+  /* inputs have an intrinsic minimum width that otherwise overflowed phones (React baseline bug) */
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-input-bg);
+  color: white;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #666;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-brand);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background-color: var(--color-brand-hover);
+}
+
+.status {
+  text-align: center;
+  padding: 1rem;
+}
+
+.error-message {
+  color: var(--color-brand);
+}
+
+@media (max-width: 639px) {
+  .home {
+    padding: 1rem 0;
+  }
+
+  .search-form {
+    margin-bottom: 1rem;
+  }
+}
