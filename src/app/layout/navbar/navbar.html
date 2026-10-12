@@ -1,0 +1,28 @@
+<nav class="navbar" aria-label="Main">
+  <ul class="navbar-links">
+    <li>
+      <a
+        class="nav-link"
+        routerLink="/"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        class="nav-link"
+        routerLink="/favorites"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Favorites</a
+      >
+    </li>
+    <li>
+      <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page"
+        >About</a
+      >
+    </li>
+  </ul>
+</nav>

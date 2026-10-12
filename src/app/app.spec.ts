@@ -3,18 +3,25 @@ import { provideRouter } from '@angular/router';
 import { App } from './app';
 
 describe('App', () => {
+  let host: HTMLElement;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
       providers: [provideRouter([])],
     }).compileComponents();
-  });
 
-  it('hosts the routed views in a router outlet', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
+    host = fixture.nativeElement;
+  });
 
-    const host = fixture.nativeElement as HTMLElement;
-    expect(host.querySelector('router-outlet')).not.toBeNull();
+  it('renders the navbar above the main content', () => {
+    const children = Array.from(host.children).map((el) => el.tagName.toLowerCase());
+    expect(children).toEqual(['app-navbar', 'main']);
+  });
+
+  it('hosts the routed views in a router outlet inside <main>', () => {
+    expect(host.querySelector('main > router-outlet')).not.toBeNull();
   });
 });
