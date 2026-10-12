@@ -1,0 +1,8 @@
+# Keep LF line endings in the repository and in checkouts on every platform.
+# Prettier (endOfLine: lf) and the editorconfig expect LF; without this, a Windows
+# checkout with core.autocrlf=true gets CRLF and `npm run format:check` fails.
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.ico binary
