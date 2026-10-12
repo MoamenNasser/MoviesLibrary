@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FavoritesStore } from '../../core/services/favorites.store';
+import { MovieGrid } from '../../shared/components/movie-grid/movie-grid';
 
-/** Placeholder until the favorites list is migrated. */
 @Component({
+  imports: [MovieGrid],
   selector: 'app-favorites',
-  template: `<section class="favorites-page"><h1>Favorites</h1></section>`,
+  styleUrl: './favorites.css',
+  templateUrl: './favorites.html',
 })
-export class Favorites {}
+export class Favorites {
+  protected readonly store = inject(FavoritesStore);
+}

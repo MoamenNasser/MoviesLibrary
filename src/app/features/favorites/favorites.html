@@ -1,0 +1,11 @@
+@if (store.favorites().length > 0) {
+  <div class="favorites-page">
+    <h1>your favorite movies</h1>
+    <app-movie-grid [movies]="store.favorites()" />
+  </div>
+} @else {
+  <div class="favorites-empty">
+    <h1>No favorites added yet</h1>
+    <p>Start adding movies to your favorites and they will appear here</p>
+  </div>
+}

@@ -1,0 +1,38 @@
+/* The React version styled these headings through a `.favorites` selector that no markup used,
+   so the page title was never styled. Here the intended centering and size are applied.
+   The headings are <h1> (each page needs one); explicit sizes keep them looking like the old <h2>s. */
+.favorites-page {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.favorites-page h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: inherit;
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.favorites-empty h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  line-height: inherit;
+  /* The original #e50914 is 2.79:1 on this panel (3:1 needed for large text). */
+  color: var(--color-favorite-active);
+}
+
+.favorites-empty p {
+  color: #999;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
