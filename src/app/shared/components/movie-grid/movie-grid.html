@@ -1,0 +1,9 @@
+<div class="movies-grid">
+  @for (movie of movies(); track movie.id) {
+    <app-movie-card
+      [movie]="movie"
+      [favorite]="favorites.isFavorite(movie.id)"
+      (favoriteToggle)="toggleFavorite(movie)"
+    />
+  }
+</div>
