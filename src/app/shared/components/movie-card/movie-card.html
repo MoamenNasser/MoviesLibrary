@@ -1,0 +1,28 @@
+<div class="movie-card">
+  <div class="movie-poster">
+    @if (movie().url; as posterUrl) {
+      <img [src]="posterUrl" [alt]="movie().title" />
+    } @else {
+      <div class="poster-placeholder">No poster</div>
+    }
+    <div class="movie-overlay">
+      <button
+        type="button"
+        class="favorite-btn"
+        [class.active]="favorite()"
+        [attr.aria-label]="favoriteLabel()"
+        [attr.aria-pressed]="favorite()"
+        (click)="favoriteToggle.emit()"
+      >
+        <span aria-hidden="true">❤️</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="movie-details">
+    <h2>{{ movie().title }}</h2>
+    @if (movie().year) {
+      <p>{{ movie().year }}</p>
+    }
+  </div>
+</div>
